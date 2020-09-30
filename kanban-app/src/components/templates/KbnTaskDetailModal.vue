@@ -1,4 +1,3 @@
 <template>
-  \n
-  <p>タスク詳細ページ</p>\n
+  <p>タスク詳細ページ</p>
 </template>
