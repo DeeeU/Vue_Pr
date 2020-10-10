@@ -1,5 +1,10 @@
 <template>
-  <button :class="classes" :disabled="disabled" type="button" @click="handleClick">
+  <button
+    :class="classes"
+    :disabled="disabled"
+    type="button"
+    @click="handleClick"
+  >
     <slot />
   </button>
 </template>
@@ -7,6 +12,7 @@
 <script>
 export default {
   name: "KbnButton",
+
   props: {
     type: {
       type: String,
@@ -19,6 +25,7 @@ export default {
   },
 
   computed: {
+    // `type`に応じてクラスを動的に生成する
     classes() {
       const cls = this.type === "text" ? "-" + this.type : "";
       return [`kbn-button${cls}`];
@@ -26,6 +33,7 @@ export default {
   },
 
   methods: {
+    // `click`イベントを発行
     handleClick(ev) {
       this.$emit("click", ev);
     },
